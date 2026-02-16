@@ -9,14 +9,126 @@ body {
   justify-content: center;
   align-items: center;
   font-family: system-ui, "PingFang SC", "Microsoft YaHei", sans-serif;
-  background: linear-gradient(135deg, #1a0a0a 0%, #2d1515 100%);
+  background: linear-gradient(135deg, rgba(26, 10, 10, 0.6) 0%, rgba(45, 21, 21, 0.5) 50%, rgba(26, 10, 10, 0.6) 100%),
+    url('2026-chinese-new-year-horse.jpg') center / cover no-repeat;
+  background-color: #1a0a0a;
   color: #f5e6d3;
+  position: relative;
+}
+
+/* Background decorations layer */
+.bg-decorations {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
 }
 
 .container {
+  position: relative;
+  z-index: 1;
   text-align: center;
   padding: 2rem;
+  background: rgba(26, 10, 10, 0.6);
+  border-radius: 1rem;
+  box-shadow: 0 0 2rem rgba(0, 0, 0, 0.4);
 }
+
+/* Golden horse - center background */
+.bg-horse {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: min(70vmin, 420px);
+  height: auto;
+  opacity: 0.2;
+}
+
+/* Red lanterns */
+.lantern {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.lantern-body {
+  width: 36px;
+  height: 48px;
+  background: linear-gradient(180deg, #c62828 0%, #8b0000 50%, #c62828 100%);
+  border-radius: 18px 18px 4px 4px;
+  box-shadow: inset -4px 0 8px rgba(0,0,0,0.3), 0 0 12px rgba(198,40,40,0.4);
+}
+.lantern-tassel {
+  width: 2px;
+  height: 24px;
+  background: linear-gradient(180deg, #e8b923, #c9a227);
+  margin-top: 2px;
+}
+.lantern-left { left: 8%; top: 15%; }
+.lantern-right { right: 8%; top: 15%; }
+.lantern-left-bottom { left: 12%; bottom: 20%; }
+.lantern-right-bottom { right: 12%; bottom: 20%; }
+
+/* Decorative clouds */
+.cloud {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 50%;
+}
+.cloud::before,
+.cloud::after {
+  content: '';
+  position: absolute;
+  background: inherit;
+  border-radius: 50%;
+}
+.cloud-1 {
+  width: 120px;
+  height: 50px;
+  left: 5%;
+  top: 25%;
+}
+.cloud-1::before { width: 60px; height: 60px; left: -20px; top: -25px; }
+.cloud-1::after { width: 80px; height: 45px; right: -30px; top: -15px; }
+.cloud-2 {
+  width: 100px;
+  height: 45px;
+  right: 10%;
+  top: 60%;
+}
+.cloud-2::before { width: 50px; height: 50px; left: -15px; top: -20px; }
+.cloud-2::after { width: 70px; height: 40px; right: -25px; top: -10px; }
+.cloud-3 {
+  width: 80px;
+  height: 35px;
+  left: 15%;
+  bottom: 25%;
+}
+.cloud-3::before { width: 45px; height: 45px; left: -18px; top: -18px; }
+.cloud-3::after { width: 55px; height: 35px; right: -20px; top: -8px; }
+
+/* Gold coin / character ornaments */
+.coin {
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #c9a227;
+  background: radial-gradient(circle at 30% 30%, #f0d040, #c9a227 50%, #8b7355);
+  border-radius: 50%;
+  border: 2px solid #e8b923;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+  opacity: 0.85;
+}
+.coin-1 { left: 18%; top: 35%; }
+.coin-2 { right: 20%; top: 40%; }
+.coin-3 { left: 50%; bottom: 18%; transform: translateX(-50%); }
 
 h1 {
   font-size: 2rem;
@@ -29,6 +141,14 @@ h1 {
   font-variant-numeric: tabular-nums;
   letter-spacing: 0.05em;
   color: #f5e6d3;
+}
+
+.blessing {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-size: 1.75rem;
+  color: #e8b923;
+  letter-spacing: 0.08em;
 }
 
 .lantern-container {
