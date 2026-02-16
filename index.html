@@ -7,8 +7,47 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="bg-decorations" aria-hidden="true">
+    <!-- Golden horse (running horse silhouette) -->
+    <svg class="bg-horse" viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg">
+      <path fill="url(#horse-gold)" d="M30 95 L35 75 L28 60 L32 45 L42 38 L55 42 L65 35 L78 32 L88 38 L95 48 L98 62 L102 75 L108 88 L102 95 L92 90 L88 78 L82 68 L75 72 L68 85 L62 92 L52 88 L48 75 L42 65 L38 78 L32 92 Z M85 35 L95 28 L105 35 L100 45 Z M98 65 L108 58 L118 68 L112 78 Z M42 40 L48 32 L58 38 L52 48 Z"/>
+      <defs>
+        <linearGradient id="horse-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#f5d76e"/>
+          <stop offset="50%" style="stop-color:#e8b923"/>
+          <stop offset="100%" style="stop-color:#c9a227"/>
+        </linearGradient>
+      </defs>
+    </svg>
+    <!-- Lanterns -->
+    <div class="lantern lantern-left">
+      <span class="lantern-body"></span>
+      <span class="lantern-tassel"></span>
+    </div>
+    <div class="lantern lantern-right">
+      <span class="lantern-body"></span>
+      <span class="lantern-tassel"></span>
+    </div>
+    <div class="lantern lantern-left-bottom">
+      <span class="lantern-body"></span>
+      <span class="lantern-tassel"></span>
+    </div>
+    <div class="lantern lantern-right-bottom">
+      <span class="lantern-body"></span>
+      <span class="lantern-tassel"></span>
+    </div>
+    <!-- Clouds -->
+    <div class="cloud cloud-1"></div>
+    <div class="cloud cloud-2"></div>
+    <div class="cloud cloud-3"></div>
+    <!-- Gold coins / ornaments -->
+    <div class="coin coin-1">福</div>
+    <div class="coin coin-2">吉</div>
+    <div class="coin coin-3">祥</div>
+  </div>
   <main class="container">
     <h1>春节倒计时</h1>
+    <p class="blessing">恭祝您新年快乐，阖家幸福，健康顺利，马到成功</p>
     <p>下一次农历新年：<span id="cny-date"></span></p>
     <p class="countdown" id="cny-countdown"></p>
   </main>
